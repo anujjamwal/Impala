@@ -53,6 +53,9 @@ bool IsS3APath(const char* path);
 /// Returns true iff the path refers to a location on an ADL filesystem.
 bool IsADLSPath(const char* path);
 
+/// Returns true iff the path refers to a location on an GCS filesystem.
+bool IsGCSPath(const char* path);
+
 /// Returns true iff 'pathA' and 'pathB' are on the same filesystem.
 bool FilesystemsMatch(const char* pathA, const char* pathB);
 }

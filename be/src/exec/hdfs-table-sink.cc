@@ -378,7 +378,8 @@ Status HdfsTableSink::CreateNewTmpFile(RuntimeState* state,
   }
 
   if (IsS3APath(output_partition->current_file_name.c_str()) ||
-      IsADLSPath(output_partition->current_file_name.c_str())) {
+      IsADLSPath(output_partition->current_file_name.c_str()) ||
+      IsGCSPath(output_partition->current_file_name.c_str())) {
     // On S3A, the file cannot be stat'ed until after it's closed, and even so, the block
     // size reported will be just the filesystem default. Similarly, the block size
     // reported for ADLS will be the filesystem default. So, remember the requested block
